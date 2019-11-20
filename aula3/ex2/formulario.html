@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+	<head>
+	    <meta charset="utf-8" />
+	    <title>Formulário</title>
+	    <link rel="stylesheet" type="text/css" href="css\style.css">
+	</head>
+	<body>
+		<div id="menu">
+			<h1>Boletim de Inscrição</h1>
+		</div>
+		
+		<div >	
+			<form id="conteudo" name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+				<!<imput type="hidden" name="FormName" value="UserForm" />
+				<dl>
+					<dt>Nome</dt>	
+						<dd><input type="text" name="FirstName" placeholder="Nome" /></dd>
+					<dt>Login</dt>
+						<dd><input type="text" name="LastName" placeholder="Sobrenome" /></dd>
+					<dt>Password</dt>
+						<dd><input type="password" name="Password" placeholder="Digite a palavra passe" /></dd>
+				</dl>
+			</form>
+		</div>
+
+				<fieldset name="Transporte" placeholder="Transporte" style="width: 47.8%; float: left;">
+					<legend>Meios de transporte</legend>
+					<input type="checkbox" name="vehicle" value="Bicicleta" />Bicicleta<br />
+					<input type="checkbox" name="vehicle" value="Carro" />Carro<br />
+					<input type="checkbox" name="vehicle" value="Comboio" />Comboio<br />
+				</fieldset>
+				<fieldset name="Cor" placeholder="Cor" style="width: 47.8%; float: left;">
+					<legend>Cor preferida</legend>
+					<input type="radio" name="color" value="Azul">Azul<br />
+					<input type="radio" name="color" value="Verde">Verde<br />
+					<input type="radio" name="color" value="Vermelho">Vermelho<br />
+					<input type="radio" name="color" value="Outra">Outra<br />
+				</fieldset>
+
+				<div style="clear: both;"></div>
+				
+				<p style="text-align: center; margin-top: 10px; ">
+					<input name="Button" type="Submit" value="Submit Query" />
+					<input type="reset" name="resetBtn" value="Reset" />
+				</p>
+
+			</form>
+		</table>
+	</body>
+</html>

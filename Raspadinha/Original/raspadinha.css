@@ -1,0 +1,24 @@
+﻿body { font-family: 'Open Sans', sans-serif; }
+
+.footer-bottom {
+    background-color: #2eb82e;
+    min-height: 30px;
+    width: 100%;
+    margin-top:50px;
+}
+.copyright {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+}
+.design {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
+    text-align: right;
+}
+.design a {
+    color: #fff;
+}

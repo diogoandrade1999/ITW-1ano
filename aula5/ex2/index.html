@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Javascript test file</title>
+		<script>
+			var s = "3";
+			var z = 1;
+			console.log(s + 1);
+			console.log(z + 1);
+
+			var a = "3";
+			var b = 4;
+
+			if (a == b)
+				alert("Iguais");
+			else
+				alert("Diferentes");
+
+
+			var c = "abc";
+			switch (c) {
+				case "abc":
+					alert("string abc");
+					break;
+				case 3:
+					alert("inteiro 3");
+					break;
+				default:
+					alert("outro");
+			}
+
+			function soma(p,o){
+				return p+o;
+			}
+			var resultado = soma(3,4);
+			console.log(resultado);
+
+		</script>
+	</head>
+
+	<body>
+		<input id="op1" value="2" />
+		<input id="op2" value="3" />
+		<input id="res" value="" />
+		
+		<script>
+			var x = document.getElementById("op1");
+			var y = document.getElementById("op2");
+			console.log(parseFloat(x.value));
+			console.log(parseFloat(y.value));
+		</script>
+
+	</body>
+</html>

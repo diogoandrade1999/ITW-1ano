@@ -1,0 +1,10 @@
+﻿body { 
+	font-family: 'Open Sans', sans-serif; 
+}
+.jumbotron {
+    background-image: url('banner.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+    height: 350px; 
+}

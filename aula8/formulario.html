@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Concerto</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="panel text-center"><h2>Concerto</h2></div>
+    <div class="container">
+    <form action="http://192.168.160.36/FormEcho.aspx" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nome:</label>
+        <input type="text" name="Nome" class="form-control" id="nome" placeholder="Nome">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Morada:</label>
+        <textarea class="form-control" name="Morada" id="morada" placeholder="Morada"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">E-Mail:</label>
+        <input type="text" class="form-control" name="E-mail" id="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Local:</label>
+        <div class="container">
+        <div class="container">
+        <label class="checkbox">
+        <input type="checkbox" class="check" id="local1" name="50" value="option1"> Bancada (Lateral) - 50$
+        </label>
+        <label class="checkbox">
+        <input type="checkbox"  class="check" id="local2" name="65" value="option2"> Bancada (Central) - 65$
+        </label>
+        <label class="checkbox">
+        <input type="checkbox"  class="check" id="local3" name="100" value="option3"> Relva (frente) - 100$
+        </label>
+        <label class="checkbox">
+        <input type="checkbox"  class="check" id="local3" name="80" value="option4"> Relva (trás) - 80$
+        </label>
+        </div>
+        </div>
+    </div> 
+    <div class="form-group">
+        <label for="max_price">Valor Máximo a Pagar:</label>
+        <input type="text" class="form-control" name="Valor_a_pagar" readonly id="val_max" value="0 euros">
+    </div>
+    <div class="container text-center">
+        <input type="submit" class="btn btn-primary" id="butao" value="Submit">
+    </div>
+    </form>
+    </div>
+    <!-- Modal -->
+    <div id="Error_Modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Erro</h4>
+      </div>
+      <div class="modal-body">
+        <ul class="Lista_erros" >
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script>
+    	$(document).ready(function(){
+		     $(".check").change(function(){
+		         var selected = [];
+		         $("input:checkbox:checked").each(function()
+		            {
+		                selected.push(parseInt($(this).attr("name")));
+		            });
+		         if (selected.length <= 0)
+		            {
+		                $(val_max).val("0 euros");
+		            }
+		         else
+		            {
+		                $(val_max).val((Math.max.apply(null,selected)) + " euros"); 
+		            }
+		     });
+		     $("#butao").click(function(){
+		         $("li").remove();
+		         var flag = 0;
+		         if (!(10 <= $("#nome").val().length))
+		              {
+		                  $(".Lista_erros").append("<li>Nome inválido</li>");
+		                  flag = 1;
+		              }
+		         if (!(20 <= $("#morada").val().length))
+		              {
+		                  $(".Lista_erros").append("<li>Morada inválida</li>");
+		                  flag = 1;
+		              }
+		         if ((!(10 <= $("#email").val().length)) || $("#email").val().indexOf("@") == -1 || ($("#email").val().indexOf("@") > $("#email").val().lastIndexOf("."))) //se tivesse colocado type email era escusado
+		              {
+		                  $(".Lista_erros").append("<li>E-mail inválido</li>");
+		                  flag = 1;
+		              }
+		         if ($("input:checkbox:checked").length < 2)
+		              {
+		                  $(".Lista_erros").append("<li>Escolha pelo menos dois locais</li>");
+		                  flag = 1;   
+		              }
+		         if (flag == 1)
+		             {
+		                 $("#Error_Modal").modal("show");    
+		                 return false;
+		             }
+			return true;
+		     });
+		 })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exemplo de formulário usando KO</title>
+<meta charset="utf-8" />
+<link href="../Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+<div class="page-header">Escolha a classe da passagem...</div>
+<form class="form-inline">
+<div class="form-group">
+<label for="" class="control-label">Choose a ticket class:</label>
+<select data-bind="options: tickets,
+optionsCaption: 'Choose...',
+optionsText: 'name',
+value: chosenTicket" class="form-control"></select>
+</div>
+<div class="form-group">
+<button data-bind="enable: chosenTicket,
+click: resetTicket" class="btn btn-default">Clear</button>
+</div>
+<div class="form-group">
+<p data-bind="with: chosenTicket" class="form-control-static">
+You have chosen <b data-bind="text: name"></b>
+($<span data-bind="text: price"></span>)
+</p>
+</div>
+</form>
+</div>
+<script src="../Scripts/jquery-3.1.1.min.js"></script>
+<script src="../Scripts/knockout-3.4.0.js"></script>
+<script src="exemplo-ko.js"></script>
+<script type="text/javascript">
+function TicketsViewModel() {
+this.tickets = [
+{ name: "Economy", price: 199.95 },
+{ name: "Business", price: 449.22 },
+{ name: "First Class", price: 1199.99 }
+];
+this.chosenTicket = ko.observable();
+this.resetTicket = function () { this.chosenTicket(null) }
+}
+ko.applyBindings(new TicketsViewModel());
+</script>
+</body>
+</html>

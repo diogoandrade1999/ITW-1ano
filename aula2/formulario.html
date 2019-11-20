@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+    	dt{float: left; width: 160px; overflow: hidden; clear: left; text-align: right; text-overflow: ellipsis; white-space: nowrap;}
+    	dd{margin-left: 180px;}
+    </style>
+
+</head>
+<body>
+
+	<h1>Informação pessoal</h1>
+	
+	<form name="PersonData" action="http://192.168.160.36/FormEcho.aspx" method="post">
+
+		<fieldset>
+			<legend>Informação pessoal</legend>
+			<input type="hidden" name="FormName" value="UserForm" />
+			<dl>
+				<dt>Curso</dt>
+					<dd>
+						<select name="Curso" placeholder="Curso">
+							<option value="1" selected="selected">Licenciatura em Engenharia Informática</option>
+							<option value="2">Mestrado Integrado em Engenharia de Computadores e Telemática</option>
+							<option value="3">Mestrado Integrado em Engenharia de Electrónca</option>
+							<option value="4">Outro</option>
+						</select>
+					</dd>
+				<dt>Nome:</dt>	
+					<dd><input type="text" name="FirstName" placeholder="Nome" /></dd>
+				<dt>Sobrenome:</dt>
+					<dd><input type="text" name="LastName" placeholder="Sobrenome" /></dd>
+				<dt>Palavra-Passe:</dt>
+					<dd><input type="password" name="Password" placeholder="Digite a palavra passe" /></dd>
+			</dl>
+		</fieldset>
+
+		<fieldset>
+			<legend>Comentários:</legend>
+			<textarea name="Comments" rows="4" cols="80" placeholder="Insira os seus comentários"></textarea>
+		</fieldset>
+
+		<fieldset name="Transporte" placeholder="Transporte" style="width: 47.8%; float: left;">
+			<legend>Meios de transporte</legend>
+			<input type="checkbox" name="vehicle" value="Bicicleta" />Bicicleta<br />
+			<input type="checkbox" name="vehicle" value="Carro" />Carro<br />
+			<input type="checkbox" name="vehicle" value="Comboio" />Comboio<br />
+		</fieldset>
+		<fieldset name="Cor" placeholder="Cor" style="width: 47.8%; float: left;">
+			<legend>Cor preferida</legend>
+			<input type="radio" name="color" value="Azul">Azul<br />
+			<input type="radio" name="color" value="Verde">Verde<br />
+			<input type="radio" name="color" value="Vermelho">Vermelho<br />
+			<input type="radio" name="color" value="Outra">Outra<br />
+		</fieldset>
+
+		<div style="clear: both;"></div>
+		
+		<p style="text-align: center; margin-top: 10px; ">
+			<input name="Button" type="Submit" value="Submit Query" />
+			<input type="reset" name="resetBtn" value="Reset" />
+		</p>
+
+	</form>
+
+</body>
+</html>

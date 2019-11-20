@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Javascript test file</title>
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+		<input id="op1" value="" />
+		<select id="operacao" onchange="getOperacao()">
+		<option value=""> </option>
+		<option value="+"> Soma </option>
+		<option value="-"> Subtração </option>
+		<option value="*"> Multiplicação </option>
+		<option value=":"> Divisão </option> </select>
+		<input id="op2" value="" />
+		<input id="res" value="" /><br />
+		<button onclick="calcula()">Calcular</button>
+	</body>
+</html>
