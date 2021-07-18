@@ -1,0 +1,64 @@
+<section>
+	<link href="Content/welcome.css" rel="stylesheet" />
+	<style>
+		.jumbotron{
+			background-image: url('Content/images/players1.jpg');
+			background-image: center center;
+			height: 300px;
+			width: auto;
+		}
+	</style>
+	<div class="container">
+		<div class="container">
+			<div class="jumbotron">
+				<h2 style="color: white; font-size: 80px; margin-top: 90px;" data-bind="text:className"></h2>
+			</div>
+		</div>
+		<input type="text" class="form-control" placeholder="Players" style="width: 70%; float: left;" data-bind="value: search" />
+		<button data-bind="click: getSearch, disable: searchGood" class="btn btn-default"><i class="fa fa-search"></i></button>
+		<button data-bind="click : clearPlayers" class="btn btn-default" ><i class="fa fa-trash-o"></i></button>
+
+		<div class="container" data-bind="foreach: players" style="margin-top: 20px;">
+			<div class="col-lg-3 col-md-6 col-xs-12">
+				<div class="panel panel-default">
+					<div class="panel-heading" style="text-align: center;"><a data-bind="text:player_name, attr:{href: '#players_details/'+player_fifa_api_id+'/'+id}"></a></div>
+					<div class="panel-body" align="center">
+						<img data-bind="attr:{src:'https://cdn.sofifa.org/18/players/'+ player_fifa_api_id +'.png'}" style="width: 100px;" onerror="this.src='http://www.forum.awid.org/forum16/sites/default/files/styles/square_500/public/default-person-512.png?itok=R0tTzxJ4'">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--<div>
+			<table class="table">
+				<thead>
+	     			<tr>
+						<th></th>
+						<th>Name:</th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach: players">
+					<tr>
+						<td><img  data-bind="attr:{src:'https://cdn.sofifa.org/18/players/'+ player_fifa_api_id +'.png'}" style="float: left; width: 30px;"  onerror="this.src='http://www.forum.awid.org/forum16/sites/default/files/styles/square_500/public/default-person-512.png?itok=R0tTzxJ4'"></td>
+						<td><a data-bind="html:player_name, attr:{href: '#players_details/'+player_fifa_api_id+'/'+id}"></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>-->
+	</div>
+	<div style="height: 25px;"></div>
+	<footer class="nb-footer">
+		<section class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<p>Copyright © 2017. Projeto Futebol</p>
+					</div>
+					<div class="col-lg-6" style="text-align: right;">
+						João & Diogo Productions &reg
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+</section>

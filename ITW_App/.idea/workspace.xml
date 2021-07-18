@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bc35544f-848a-4ef2-bc39-f206af1e5ca0" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-10" />
+    <option name="width" value="1088" />
+    <option name="height" value="1102" />
+  </component>
+  <component name="ProjectId" id="1e60LS5B3hS1etvdfEkfL0FjymJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/APP" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ITW_App-master/index.html">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc35544f-848a-4ef2-bc39-f206af1e5ca0" name="Default" comment="" />
+      <created>1513371061203</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1513371061203</updated>
+      <workItem from="1513371063217" duration="7613000" />
+      <workItem from="1513382405430" duration="686000" />
+      <workItem from="1513388667364" duration="8555000" />
+      <workItem from="1513429962933" duration="5418000" />
+      <workItem from="1513447770950" duration="6992000" />
+      <workItem from="1513456855567" duration="14952000" />
+      <workItem from="1513479744542" duration="8958000" />
+      <workItem from="1513513836586" duration="12147000" />
+      <workItem from="1513534181656" duration="9691000" />
+      <workItem from="1513548412311" duration="17755000" />
+      <workItem from="1513566727452" duration="12000" />
+      <workItem from="1513566765033" duration="70000" />
+      <workItem from="1513595692489" duration="3489000" />
+      <workItem from="1513606633486" duration="17575000" />
+      <workItem from="1513634480820" duration="4304000" />
+      <workItem from="1513640768691" duration="109000" />
+      <workItem from="1513977078247" duration="193000" />
+      <workItem from="1545088407302" duration="2249000" />
+      <workItem from="1545151934368" duration="7549000" />
+      <workItem from="1545225785589" duration="2755000" />
+      <workItem from="1593626683460" duration="58000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/App/views/teams.html</url>
+          <line>33</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

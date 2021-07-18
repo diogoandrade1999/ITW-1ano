@@ -1,0 +1,357 @@
+<section>
+	<link href="Content/welcome.css" rel="stylesheet" />
+	<div class="container">
+		<div class="container">
+			<div style="margin-top: 10px; margin-bottom: 10px;"><a href="#players"><button class="btn">Go to back</button></a></div>
+			<div class="col-lg-11 col-md-11 col-xs-11">
+				<div class="panel panel-primary">
+					<div class="panel-body">
+						<div class="page-header">
+							<!-- ko foreach: player -->
+							<h1 data-bind="text: player_name"></h1>
+							<img  data-bind="attr:{src:'https://cdn.sofifa.org/18/players/'+ player_fifa_api_id +'.png'}"  onerror="this.src='http://www.forum.awid.org/forum16/sites/default/files/styles/square_500/public/default-person-512.png?itok=R0tTzxJ4'" style="float: left; width: 120px;">
+							<!-- /ko -->
+						</div>
+						<!-- ko foreach: player-->
+						<div class="container" style="margin-left: 130px;">
+							<div>Birthday:<span data-bind="html:birthday.split('T')[0]"></span></div>
+							<div>Height:<span data-bind="html:height"></span></div>
+							<div>Weight:<span data-bind="html:weight"></span></div>
+						</div>
+						<!-- /ko -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ko foreach: player-->
+		<div data-bind="visible: player_attributes.length > 0">
+			<div data-bind="foreach: player_attributes">
+				<div class="container" style="text-align: center; background-color: #CCCCCC;"><h2>Attributes</h2></div>
+				<div class="panel-body">
+					<div class="container">
+						<div class="col-lg-12 col-md-12 col-xs-12">
+							<div class="panel panel-default">
+								<div class="panel-heading" style="text-align: center;">Quality</div>
+								<div class="panel-body">
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Potential</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: potential"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Preferred Foot</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: preferred_foot"></div>
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Attacking Work Rate</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: attacking_work_rate"></div>
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Defensive Work Rate</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: defensive_work_rate"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Overall Rating</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: overall_rating"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="col-lg-12 col-md-12 col-xs-12">
+							<div class="panel panel-default">
+								<div class="panel-heading" style="text-align: center;">Attacking</div>
+								<div class="panel-body">
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Crossing</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: crossing"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Finishing</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: finishing"></div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Heading Accuracy</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: heading_accuracy"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Short Passing</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: short_passing"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Volleys</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: volleys"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="col-lg-12 col-md-12 col-xs-12">
+							<div class="panel panel-default">
+								<div class="panel-heading" style="text-align: center;">Skill</div>
+								<div class="panel-body">
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Dribbling</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: dribbling"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Curve</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: curve"></div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Free Kick Accuracy</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: free_kick_accuracy"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Long Passing</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: long_passing"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Ball Control</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: ball_control"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="col-lg-12 col-md-12 col-xs-12">
+							<div class="panel panel-default">
+								<div class="panel-heading" style="text-align: center;">Movement</div>
+								<div class="panel-body">
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Acceleration</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: acceleration"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Sprint Speed</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: sprint_speed"></div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Agility</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: agility"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Reactions</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: reactions"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">balance</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: balance"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="col-lg-12 col-md-12 col-xs-12">
+							<div class="panel panel-default">
+								<div class="panel-heading" style="text-align: center;">Power</div>
+								<div class="panel-body">
+									<div class="col-lg-2 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Shot Power</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: shot_power"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Jumping</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: jumping"></div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">stamina</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: stamina"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Strength</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: strength"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Long Shots</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: long_shots"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="col-lg-12 col-md-12 col-xs-12">
+							<div class="panel panel-default">
+								<div class="panel-heading" style="text-align: center;">Mentality</div>
+								<div class="panel-body">
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Long Shots</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: long_shots"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Aggression</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: aggression"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Interceptions</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: interceptions"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Positioning</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: positioning"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Vision</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: vision"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Penalties</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: penalties"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="col-lg-12 col-md-12 col-xs-12">
+							<div class="panel panel-default">
+								<div class="panel-heading" style="text-align: center;">Defending</div>
+								<div class="panel-body">
+									<div class="col-lg-4 col-md-4 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Marking</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: marking"></div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Standing Tackle</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: standing_tackle"></div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">Sliding Tackle</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: sliding_tackle"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="col-lg-12 col-md-12 col-xs-12">
+							<div class="panel panel-default">
+								<div class="panel-heading" style="text-align: center;">Goalkeeping</div>
+								<div class="panel-body">
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">GK Diving</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: gk_diving"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">GK Handling</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: gk_handling"></div>
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">GK Kicking</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: gk_kicking"></div>
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-3 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">GK Positioning</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: gk_positioning"></div>
+										</div>
+									</div>
+									<div class="col-lg-2 col-md-2 col-xs-12">
+										<div class="panel panel-success">
+											<div class="panel-heading" style="text-align: center;">GK Reflexes</div>
+											<div class="panel-body" style="text-align: center;" data-bind="text: gk_reflexes"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /ko -->
+	</div>
+	<div style="height: 25px;"></div>
+	<footer class="nb-footer"  style="width: 100%; bottom: 0;">
+		<section class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<p>Copyright © 2017. Projeto Futebol</p>
+					</div>
+					<div class="col-lg-6" style="text-align: right;">
+						João & Diogo Productions &reg
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+</section>

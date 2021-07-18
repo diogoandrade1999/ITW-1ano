@@ -1,0 +1,57 @@
+<section>
+	<link href="Content/welcome.css" rel="stylesheet" />
+	<div class="container">
+		<div class="container" style="text-align: center; background-color: #CCCCCC;"><h2 data-bind="text:className"></h2></div>
+		<div class="container" data-bind="foreach: leagues" style="width: 100%;">
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				<div class="panel panel-default" style="height: 170px;">
+					<div style="float: left;"><img style="width: 150px;" data-bind="attr:{src:'Content/images/leaguelogos/'+ id +'.png'}"></div>
+					<div style="font-weight:bold;"><i class="fa fa-map-marker"></i> Country: <span data-bind="html:countryName"></span></div>
+					<div style="font-weight:bold;"><i class="fa fa-map-marker"></i> Name: <span data-bind="html:name"></span></div>
+					<div style="font-weight:bold;"><i class="fa fa-map-marker"></i> Seasons: <span data-bind="html:seasons"></span></div>
+					<div style="font-weight:bold;"><i class="fa fa-map-marker"></i> Matches: <span data-bind="html:matches"></span></div>
+				</div>
+			</div>
+		</div>
+		<div style="margin-top: 10px;"><a href="#countleag"><button class="btn">Go to back</button></a></div>
+
+	<!-- ko foreach: leagues-->
+		<div class="container" style="text-align: center; background-color: #CCCCCC;"><h1> Teams: </h1></div>
+		<table class="table" >
+			<thead>
+     			<tr class="active">
+					<th><h3>Logo:</h3></th>
+					<th><h3>Name:</h3></th>
+					<th><h3>Acronym:</h3></th>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach: teams" >
+				<tr class="active">
+					<td><img data-bind="attr:{src:'https://cdn.sofifa.org/18/teams/'+ team_fifa_api_id +'.png'}" onerror="this.src='http://a.espncdn.com/i/teamlogos/soccer/500/default-team-logo-500.png'" style="width: 40px;"></td>
+					<td><a data-bind="html: team_long_name, attr:{href: '#teams_details/'+team_fifa_api_id+'/'+id}"></a></td>
+					<td><span data-bind="html: team_short_name"></span></td>
+				</tr>	
+			</tbody>
+		</table>
+	<!-- /ko -->
+	<div class="clearfix"></div>
+	<!-- ko if:error -->
+	<div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+	<!-- /ko -->
+	</div>
+	<div style="height: 25px;"></div>
+	<footer class="nb-footer">
+		<section class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<p>Copyright © 2017. Projeto Futebol</p>
+					</div>
+					<div class="col-lg-6" style="text-align: right;">
+						João & Diogo Productions &reg
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+</section>

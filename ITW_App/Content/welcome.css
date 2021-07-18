@@ -1,0 +1,87 @@
+.navbar{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.item {
+    height: 780px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.item:nth-child(1) {
+    background-image: url('http://www.tokkoro.com/picsup/1323439-soccer.jpg');
+    background-position: center center;
+}
+
+.item:nth-child(2) {
+    background-image: url('https://hdwallsource.com/img/2014/7/soccer-wallpaper-5669-5832-hd-wallpapers.jpg');
+    background-position: top center;
+}
+
+.item:nth-child(3) {
+    background-image: url('https://i.pinimg.com/originals/21/50/5e/21505e4d53ff14e3163b7c9c5d7d4525.jpg');
+    background-position: top center;
+}
+
+.item:nth-child(4) {
+    background-image: url('https://marketingland.com/wp-content/ml-loads/2014/08/mobile-smartphone-apps-ss-1920.jpg');
+}
+
+#theCarousel{
+    margin-top: 0px;
+}
+.nb-footer {
+    position: fixed;
+    width: 100%;
+    z-index: 300;
+    bottom: 0;
+    background: #222;
+    border-top: 4px solid #111;
+}
+
+.nb-footer .about{
+    margin: 0 auto;
+    margin-top: 15px;
+    max-width: 1170px;
+    text-align: center;
+}
+
+.nb-footer .about p{
+    font-size: 13px;
+    color: #999;
+    margin-top: 15px;
+}
+
+.nb-footer .about .social-media {
+    margin-top: 10px;
+}
+
+.nb-footer .about .social-media ul li a {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    font-size: 16px;
+    color: #aaa;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nb-footer .about .social-media ul li a:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+.nb-footer .copyright {
+    margin-top: 5px;
+    background: #111;
+    padding: 7px 0;
+    color: #999;
+}
+
+.nb-footer .copyright p {
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,121 @@
+<section>
+	<link href="Content/style.css" rel="stylesheet" />
+	<link href="Content/welcome.css" rel="stylesheet" />
+	<style>
+		.jumbotron{
+			background-image: url('Content/images/countries.jpg');
+			background-image: center center;
+			height: 300px;
+			width: auto;
+		}
+	</style>
+	<!--<div class="container">
+	<div class="page-header">
+		<h2 data-bind="text:className"></h2>
+	</div>
+	<table class="table" style="font-size: 20px;">
+		<thead>
+			<th>Country</th>
+            <th>League</th>
+		</thead>
+		<tbody data-bind="foreach: leagues">
+			<tr>
+				<td style="width: 60%;"><i class="fa fa-map-marker"></i><span data-bind="html:countryName"></span></td>
+                <td style="width: 40%;"><a data-bind="html:name, attr:{href: '#leagues_details/'+id}"></a></td>
+			</tr>
+		</tbody>
+	</table>
+	<div>
+	</div>
+    </div>-->
+
+	<div class="container">
+		<div class="container">
+			<div class="jumbotron">
+				<h2 style="color: white; font-size: 68px; margin-top: 90px;" data-bind="text:classNamea"></h2>
+			</div>
+		</div>
+		<center>
+		<div id="theCarousel" class="carousel slide" data-ride="carousel" style="font-size: 30px;">
+			<div class="carousel-inner"  data-bind="foreach: leagues">
+				<div data-bind="attr:{class: id == '1' ? 'item active':'item'}, style:{backgroundImage: 'url(Content/images/' + id + '.png)'}">
+					<div class="slide"></div>
+					<div class="carousel-caption">
+						<h2><button data-toggle="modal" data-target="#myModal" data-bind="html:countryName, attr:{name: countryName}" onclick="modalWillWork()"></button></h2>
+						<a style="margin-bottom: 15px;" data-bind="html:name, attr:{href: '#leagues_details/'+id}"></a>
+					</div>
+				</div>
+			</div>
+
+			<a class="left carousel-control" href="#theCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#theCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+		</center>
+	</div>
+	<div style="height: 50px;"></div>
+
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Country Location</h4>
+				</div>
+				<div class="modal-body">
+					<iframe id="map"
+							width=100%
+							height="300"
+							frameborder="0" style="border:0"
+							src=""></iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div data-bind="foreach: leagues">
+	<div class="modal fade" data-bind="attr:{id: 'modal' +id}" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h1 class="modal-title" data-bind="text: countryName + ' Leagues'"></h1>
+				</div>
+				<div class="modal-body">
+					<a data-bind="html:name, attr:{href: '#leagues_details/'+id}"></a>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>-->
+	<footer class="nb-footer" style="margin-top: 40px;">
+		<section class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<p>Copyright © 2017. Projeto Futebol</p>
+					</div>
+					<div class="col-lg-6" style="text-align: right;">
+						João & Diogo Productions &reg
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+
+
+	<div class="clearfix"></div>
+	<!-- ko if:error -->
+	<div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+	<!-- /ko -->
+
+</section>

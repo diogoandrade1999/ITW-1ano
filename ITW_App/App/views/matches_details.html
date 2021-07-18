@@ -1,0 +1,70 @@
+<section>
+	<link href="Content/style.css" rel="stylesheet" />
+	<link href="Content/welcome.css" rel="stylesheet" />
+	<div class="container">
+		<div class="container page-header" style="text-align: center; background-color: #CCCCCC;"><h2 data-bind="text:className"></h2></div>
+		<div data-bind="foreach: matches">
+		<table class="table" style="margin-top: 20px;">
+			<tr class="active">
+				<td style="text-align: center; font-size: 20px;" colspan="6"><span data-bind="text: 'Stage: ' + stage"></span></td>
+			</tr>
+			<tr class="active">
+				<td style="width: 45%;">
+					<img data-bind="attr:{src:'https://cdn.sofifa.org/18/teams/'+ home_team.team_fifa_api_id +'.png'}" onerror="this.src='http://a.espncdn.com/i/teamlogos/soccer/500/default-team-logo-500.png'" style="max-width: 150px; min-width: 150px; float: left;" />
+					<span style="float: right; font-size: 20px;"><a data-bind="text: home_team.team_long_name, attr:{href: '#teams_details/'+home_team.team_fifa_api_id+'/'+home_team.id}"></a></span>
+				</td>
+				<td style="width: 10%; text-align: center;">
+					<span data-bind="text: home_team_goal + ' - ' + away_team_goal" style="font-size: 30px;"></span>
+				</td>
+				<td style="width: 45%;">
+					<span style="float: left; font-size: 20px;"><a data-bind="text: away_team.team_long_name, attr:{href: '#teams_details/'+away_team.team_fifa_api_id+'/'+away_team.id}"></a></span>
+					<img data-bind="attr:{src:'https://cdn.sofifa.org/18/teams/'+ away_team.team_fifa_api_id +'.png'}" onerror="this.src='http://a.espncdn.com/i/teamlogos/soccer/500/default-team-logo-500.png'" style="max-width: 150px; min-width: 150px; float: right;"/>
+				</td>
+			</tr>
+			<tr class="active">
+				<td style="text-align: center; font-size: 20px;" colspan="6"><span data-bind="text: 'Match Date: ' + date.split('T')[0]"></span></td>
+			</tr>
+			<tr class="active">
+				<td>
+				<div style="background-image: url('https://cdn.sofifa.org/img/field.png'); width: 480px; height: 360px; position:relative;" data-bind="foreach:Home_player">
+					<div data-bind="attr:{class: CSSClass}" style="position:absolute; z-index: 99;">
+						<img data-bind="attr:{src:'https://cdn.sofifa.org/'+ $parent.season.split('/20')[1]+'/players/'+ player_fifa_api_id +'.png'}"  onerror="this.src='http://www.forum.awid.org/forum16/sites/default/files/styles/square_500/public/default-person-512.png?itok=R0tTzxJ4'" style="width: 55px; position: absolute;" />
+						<label style="text-decoration-color: black; margin-top: 50px; margin-left: -12px; width: 90px;  overflow: hidden; white-space:nowrap; text-overflow: clip ellipsis;"><a data-bind="text: player_name, attr:{href: '#players_details/'+player_fifa_api_id+'/'+id}" style="overflow: hidden; white-space:nowrap; text-overflow: clip ellipsis;"></a></label>
+					</div>
+				</div>
+				</td>
+				<td></td>
+				<td>
+				<div style="background-image: url('https://cdn.sofifa.org/img/field.png'); width: 480px; height: 360px; position:relative;" data-bind="foreach: Away_player">
+					<div data-bind="attr:{class: CSSClass}" style="position:absolute; z-index: 99;">
+						<img data-bind="attr:{src:'https://cdn.sofifa.org/'+$parent.season.split('/20')[1]+'/players/'+ player_fifa_api_id +'.png'}"  onerror="this.src='http://www.forum.awid.org/forum16/sites/default/files/styles/square_500/public/default-person-512.png?itok=R0tTzxJ4'" style="width: 55px; position: absolute;" />
+						<label style="text-decoration-color: black; margin-top: 50px; margin-left: -12px; width: 90px;  overflow: hidden; white-space:nowrap; text-overflow: clip ellipsis;"><a data-bind="text: player_name, attr:{href: '#players_details/'+player_fifa_api_id+'/'+id}" style="overflow: hidden; white-space:nowrap; text-overflow: clip ellipsis;"></a></label>
+					</div>
+				</div>
+				</td>
+
+			</tr>
+		</table>
+		</div>
+	</div>
+	<div style="height: 50px;"></div>
+	<footer class="nb-footer">
+		<section class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<p>Copyright © 2017. Projeto Futebol</p>
+					</div>
+					<div class="col-lg-6" style="text-align: right;">
+						João & Diogo Productions &reg
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+
+	<div class="clearfix"></div>
+	<!-- ko if:error -->
+	<div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+	<!-- /ko -->
+</section>

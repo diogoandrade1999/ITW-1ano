@@ -1,0 +1,63 @@
+<section>
+	<link href="Content/welcome.css" rel="stylesheet" />
+	<style>
+		.jumbotron{
+			background-image: url('Content/images/teams.jpg');
+			background-image: center center;
+			height: 300px;
+			width: auto;
+		}
+	</style>
+	<div class="container">
+		<div class="container">
+			<div class="jumbotron">
+				<h2 style="color: white; font-size: 80px; margin-top: 90px;" data-bind="text:className"></h2>
+			</div>
+		</div>
+
+	<input type="text" class="form-control" placeholder="Teams" style="width: 70%; float: left;" data-bind="value: search, event{change: getSearch}" />
+	<button data-bind="click: getSearch, disable: searchGood" class="btn btn-default"><i class="fa fa-search"></i></button>
+	<button data-bind="click : clearTeams" class="btn btn-default" ><i class="fa fa-trash-o"></i></button>
+			
+		<div style="margin-top: 10px;">
+			<table class="table" style="font-weight: bold;">
+				<thead>
+	     			<tr class="active">
+						<th><h3>Logos:</h3></th>
+						<th><h3>Name:</h3></th>
+						<th><h3>Acronym:</h3></th>
+						<th><h3>Country:</h3></th>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach: teams">
+					<tr class="active">
+						<td><img data-bind="attr:{src:'https://cdn.sofifa.org/18/teams/'+ team_fifa_api_id +'.png'}" style="float: left; width: 40px;" onerror="this.src='http://a.espncdn.com/i/teamlogos/soccer/500/default-team-logo-500.png'"></td>
+						<td><a data-bind="html:team_long_name, attr:{href: '#teams_details/'+team_fifa_api_id+'/'+id, title: team_long_name}"></a></td>
+						<td data-bind="html:team_short_name"></td>
+						<td><a data-bind="html:Country.name, attr:{href: '#leagues_details/'+Country.id, title: Country.name}"></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+			
+		<div class="clearfix"></div>
+		<!-- ko if:error -->
+		<div class="bs-callout bs-callout-danger" data-bind="html:error"></div>
+		<!-- /ko -->
+	</div>
+	<div style="height: 25px;"></div>
+	<footer class="nb-footer">
+		<section class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<p>Copyright © 2017. Projeto Futebol</p>
+					</div>
+					<div class="col-lg-6" style="text-align: right;">
+						João & Diogo Productions &reg
+					</div>
+				</div>
+			</div>
+		</section>
+	</footer>
+</section>
